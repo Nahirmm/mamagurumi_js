@@ -1,6 +1,21 @@
   
   const carritoDeComprasNombre = 'carritoDeCompras';
+  const contenedorCarrito = document.getElementById('carritoContenedor');
+  const contadorCarrito = document.getElementById('contadorCarrito');
+  const precioTotal = document.getElementById('precioTotal');
 
+  class Item {
+    constructor(carroLista, producto) {
+      this.index = carroLista.length;
+      this.cantidad = 1;
+      this.producto = producto;
+    }
+  }
+
+  //funciones
+
+
+  // --- LOCAL STORAGE ---
   const getCarro = () => {
     let carroEnObjeto = JSON.parse(localStorage.getItem(carritoDeComprasNombre))
     return carroEnObjeto.carro
@@ -8,38 +23,50 @@
 
   const setCarro = (productosEnCarrito) => {
     let carroEnString = JSON.stringify({carro: productosEnCarrito});
+    actualizarCarrito(productosEnCarrito);
     return localStorage.setItem(carritoDeComprasNombre, carroEnString);
   }
 
   const iniciarCarro = () => {
-    let carro = JSON.parse(localStorage.getItem(carritoDeComprasNombre))
-    if(!carro) {
+    let carroCreadoEnLocalStorage = JSON.parse(localStorage.getItem(carritoDeComprasNombre))
+    if(!carroCreadoEnLocalStorage) {
       setCarro([]);
+    } else {
+      actualizarCarrito(carroCreadoEnLocalStorage.carro)
     }
   }
 
-  setCarro([]);
+  // --- CARRITO ---
 
-  const contenedorCarrito = document.getElementById('carritoContenedor');
+  function actualizarCarrito(carroLista) {
+    contadorCarrito.innerText = carroLista.length;
+    precioTotal.innerText = carroLista.reduce((acc,el)=> acc + (el.producto.precio * el.cantidad),0)
+  }
 
   function agregarAlCarrito(id) {
     let carroLista = getCarro();
 
-    let productoRepetido = carroLista.find(prodR => prodR.id == id);
-    if(productoRepetido){
-
-      productoRepetido.cantidad = productoRepetido.cantidad + 1;
-      document.getElementById(`cantidad${productoRepetido.id}`).innerHTML = `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`;
-      
-      actualizarCarrito()
+    let itemDeProductoRepetido = carroLista.find(item => item.producto.id == id);
+    if(itemDeProductoRepetido){
+      agregarItemRepetido(carroLista, itemDeProductoRepetido)
     }else{
+      agregarNuevoItem(carroLista, id)
+    }
+  };
 
+  const agregarItemRepetido = (carroLista, itemRepetido) => {
+    
+    let nuevaCantidad = carroLista[itemRepetido.index].cantidad + 1
+    carroLista[itemRepetido.index].cantidad = nuevaCantidad
+    setCarro(carroLista)
+    let idProducto = itemRepetido.producto.id
+    document.getElementById(`cantidad${idProducto}`).innerHTML = `<p id="cantidad${idProducto}">Cantidad: ${nuevaCantidad}</p>`;
+  }
+
+  const agregarNuevoItem = (carroLista, id) => {
     let agregarProducto = tienda.find(producto => producto.id == id);
-    carroLista.push(agregarProducto);
-    setCarro(carroLista);
-
-    agregarProducto.cantidad = 1;
-    actualizarCarrito();
+    let nuevoItem = new Item(carroLista, agregarProducto)
+    carroLista.push(nuevoItem);
 
     let div = document.createElement("div");
     div.classList.add('productoEnCarrito');
@@ -49,26 +76,23 @@
                     <button id="eliminar${agregarProducto.id}" class="boton-eliminar"><img src="../assets/papelera-de-reciclaje.svg" alt="" class="logosRedesSocialesFooter"></button>`
 
     contenedorCarrito.appendChild(div);
+    
+    setCarro(carroLista);
+  }
 
+  const onClickBotonEliminar = () => {
+    let carroLista = getCarro()
     let botonEliminar = document.getElementById(`eliminar${agregarProducto.id}`)
 
         botonEliminar.onclick = () => {
           botonEliminar.parentElement.remove()
-            carritoDeCompras = getCarro().filter(prodE => prodE.id != agregarProducto.id)
-            setCarro(carritoDeCompras);
-            actualizarCarrito()
+            carritoDeCompras = carroLista.filter(itemE => itemE.producto.id != agregarProducto.id)
+            setCarro(carroLista);
         }
-    }
-  };
-
-  const contadorCarrito = document.getElementById('contadorCarrito');
-  const precioTotal = document.getElementById('precioTotal');
-
-  function actualizarCarrito() {
-    
-    let carritoPorActualizar = getCarro();
-    contadorCarrito.innerText = carritoPorActualizar.reduce((acc, el)=> acc + el.cantidad,0);
-    precioTotal.innerText = carritoPorActualizar.reduce((acc,el)=> acc + (el.precio * el.cantidad),0)
-    
   }
+
+    // ejecución 
+
+    iniciarCarro();
+
   
