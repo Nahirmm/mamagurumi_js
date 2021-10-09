@@ -1,0 +1,22 @@
+@media only screen and (max-width: 854px) {
+    .mainFaqs {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        .divImgFaqs {
+            order: 2;
+            text-align: center;
+
+            img {
+                width: 80%;
+                height: 80%;
+            }
+        }
+        
+        .divTextoFaqs {
+            order: 1;
+        }
+    }
+}

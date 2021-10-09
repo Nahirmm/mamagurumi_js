@@ -1,0 +1,34 @@
+$colorLetrasOscuro: #424b54; 
+$colorLetrasMasOscuro: #25313d; 
+
+.mainFaqs {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .divImgFaqs {
+        margin: 2rem;
+        img {
+            border-radius: 5%;
+        }
+    }
+    
+    .divTextoFaqs {
+        margin: 2rem;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            font-size: 4rem;
+            color: #222d38;
+            margin: 2rem;
+        }
+
+        h3 {
+            font-size: 2.8rem;
+            color: $colorLetrasMasOscuro;
+            margin: 2rem;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Querés saber quién está detrás de Mamagurumi? Acá te lo cuento!">
+    <meta name="keywords"  content="Amigurumis, Crochet, Patrones gratis, Muñecos tejidos, Venta amigurumis, Nosotros">
+    <title>Nosotros - Mamagurumi</title>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-xl navbar-light p-auto col-12">
+                <div class="container-fluid" id="header">
+                    <a class="navbar-brand" href="../index.html"><img src="../assets/mamagurumilogo.png" alt="Logo" class="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto  mb-2 mb-lg-0 menu2" id="menuNav">
+                            <li class="nav-item">
+                                <a class="nav-link active"  id="activo" aria-current="page" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tienda.html">Tienda</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="patronesgratis.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Patrones gratis
+                                </a>
+                                <ul id="navDropdown" class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesBotanicos">Botanicos</a></li>
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesAnimalitos">Animalitos</a></li>
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesDeTodoUnPoco">De todo un poco</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="FaQs.html">FaQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button id="botonCarrito"><img src="../assets/carrito-de-compras.svg" alt="" class="logosRedesSocialesFooter"><span id="contadorCarrito">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="mainNosotros">
+        <h1 class="disenioSubtitulos">Nosotros</h1>
+        <section class="sectionNosotros">
+            <img src="../assets/familia2.JPG" alt="Nosotros" id="familiaNosotros">
+            <p class="colorParrafo sectionNosotros__p">
+                Hola! Mi nombre es Fernanda, soy quien teje y crea los amigurumis, y estos son mis hijos Nahir y Juan Cruz, quienes me ayudan con el resto de los procesos. 
+                <br>
+                Empece a tejer desde muy chica, me enseñó mi abuela a quien recuerdo con mucho amor. Siempre me gustaron las artesanías y he hecho una gran variedad de cosas hasta que conocí los amigurumis y quede enamorada. Hice muchos por motus propio, hasta que entre en un grupo de tejido donde se hacían desafios para ganar patrones más elaborados, les dejo tres de mis primeros desafíos:
+            </p>
+        </section>
+        <section id="lineaFotosNosotros">
+            <img src="../assets/conejito.png" alt="Conejito" id="conejoNosotros">
+            <img src="../assets/abejita.png" alt="Abejita" id="abejitaNosotros">
+            <img src="../assets/minigoku.png" alt="Goku" id="gokuNosotros">
+        </section>
+        <section class="sectionNosotros">
+            <p class="colorParrafo sectionNosotros__p">
+                Primero los hacía para mi familia, me encanta buscar y hacerles cosas que les gusten y que también presenten un desafío para mi. Luego, con ayuda de mis hijos, empecé a vender mis creaciones a gente conocida, hasta que un día nació <b>Mamagurumi</b> y fue creciendo de una manera asombrosa y rodeados de amor. 
+                <br>
+                El proceso para crear un muñeco es largo y dedicado, ya que trato de que cada detalle quede perfecto y sea exactamente lo que ustedes buscan y me piden. 
+                <br>
+                Les agradezco enormemente darme la oportunidad de trabajar de lo que amo y llevarse a sus casas una partecita de mi corazón que es lo que dejo en cada muñeco que hago.
+            </p>
+            <img src="../assets/milodesarmado.jpeg" alt="Proceso de tejido" id="miloNosotros">
+        </section>
+    </main>
+    <div class="modalContenedor">
+        <div class="modalCarrito">
+            <div class="tituloModalCarrito">
+            <h3>Carrito de compras</h3>
+            <button id="carritoCerrar"><img src="../assets/marca-x.svg" alt="" class="logosRedesSocialesFooter"></button>
+            </div>
+            <div id="carritoContenedor">
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        </div>
+    </div>
+    <footer class="footerFixed"> 
+        <div id="footer">
+            <ul class="ulFooter">
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="tienda.html">Tienda</a>
+                </li>
+                <li>
+                    <a href="patronesgratis.html">Patrones gratis</a>
+                </li>
+                <li>
+                    <a href="FaQs.html">FaQs</a>
+                </li>
+                <li>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <div class="footer__redesSociales">
+                <p>Seguinos en nuestras redes sociales</p>
+                <a href="https://web.whatsapp.com/" target="_blank"><img src="../assets/whatsapp.svg" alt="whatsapp" class="logosRedesSocialesFooter"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="../assets/facebook.svg" alt="facebook" class="logosRedesSocialesFooter"></a>
+                <a href="https://www.instagram.com/?hl=es-la" target="_blank"><img src="../assets/instagram.svg" alt="instagram" class="logosRedesSocialesFooter"></a>
+            </div>
+            <img src="../assets/mamagurumilogo.png" alt="Logo" class="logo">
+        </div>
+    </footer> 
+    <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/productos.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/carrito.js"></script>   
+</body>
+</html>

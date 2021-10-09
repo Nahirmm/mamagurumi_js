@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Preguntas frecuentes y métodos de pago.">
+    <meta name="keywords"  content="Amigurumis, Crochet, Modelos, Muñecos tejidos, Venta amigurumis, preguntas frecuentes">
+    <title>FaQs - Mamagurumi</title>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-xl navbar-light p-auto col-12">
+                <div class="container-fluid" id="header">
+                    <a class="navbar-brand" href="../index.html"><img src="../assets/mamagurumilogo.png" alt="Logo" class="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto  mb-2 mb-lg-0 menu2" id="menuNav">
+                            <li class="nav-item">
+                                <a class="nav-link active"  id="activo" aria-current="page" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tienda.html">Tienda</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="patronesgratis.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Patrones gratis
+                                </a>
+                                <ul id="navDropdown" class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesBotanicos">Botanicos</a></li>
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesAnimalitos">Animalitos</a></li>
+                                    <li><a class="dropdown-item" href="patronesgratis.html#patronesDeTodoUnPoco">De todo un poco</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="FaQs.html">FaQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button id="botonCarrito"><img src="../assets/carrito-de-compras.svg" alt="" class="logosRedesSocialesFooter"><span id="contadorCarrito">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="mainFaqs">
+            <div class="divImgFaqs">
+                <img src="../assets/gatitoTriste.jpg" alt="">
+            </div>
+            <div class="divTextoFaqs">
+                <h2>Oops! Página en construcción</h2>
+                <h3>Lo sentimos mucho, 
+                    <br> 
+                    estamos trabajando para mejorar el sitio</h3>
+                <p class="colorParrafo">En breve contaremos con las preguntas frecuentes, mientras tanto te invito a mandarme tu consulta desde la sección contacto o haciendo <a href="contacto.html">click aquí</a>.</p>
+            </div>
+        </div>
+    </main>
+    <div class="modalContenedor">
+        <div class="modalCarrito">
+            <div class="tituloModalCarrito">
+            <h3>Carrito de compras</h3>
+            <button id="carritoCerrar"><img src="../assets/marca-x.svg" alt="" class="logosRedesSocialesFooter"></button>
+            </div>
+            <div id="carritoContenedor">
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <ul class="ulFooter">
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="tienda.html">Tienda</a>
+                </li>
+                <li>
+                    <a href="patronesgratis.html">Patrones gratis</a>
+                </li>
+                <li>
+                    <a href="FaQs.html">FaQs</a>
+                </li>
+                <li>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <div class="footer__redesSociales">
+                <p>Seguinos en nuestras redes sociales</p>
+                <a href="https://web.whatsapp.com/" target="_blank"><img src="../assets/whatsapp.svg" alt="whatsapp" class="logosRedesSocialesFooter"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="../assets/facebook.svg" alt="facebook" class="logosRedesSocialesFooter"></a>
+                <a href="https://www.instagram.com/?hl=es-la" target="_blank"><img src="../assets/instagram.svg" alt="instagram" class="logosRedesSocialesFooter"></a>
+            </div>
+            <img src="../assets/mamagurumilogo.png" alt="Logo" class="logo">
+        </div>
+    </footer> 
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/productos.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/carrito.js"></script>  
+</body>
+</html>

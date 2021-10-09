@@ -1,0 +1,46 @@
+$background: #EBCFB2;
+$colorLetrasMasOscuro: #25313d;  
+$fontFamily: 'nunito', sans-serif;
+
+footer {
+    width: 100%;
+}
+
+#footer {
+    font-size: 2rem;
+    background-image: linear-gradient(to bottom, $background , white);
+    border-top: solid 0.2rem $colorLetrasOscuro;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem;
+}
+
+#footer {
+    .ulFooter {
+        li {
+            list-style-type: none;
+
+            a {
+                color: $colorLetrasMasOscuro;
+                font-size: 1.8rem;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.footer__redesSociales {
+    display: block;
+    text-align: center;
+    p {
+        margin: 1rem;
+        color: $colorLetrasMasOscuro;
+    }
+}
+
+.logosRedesSocialesFooter {
+    width: 4rem;
+    height: 4rem;
+}

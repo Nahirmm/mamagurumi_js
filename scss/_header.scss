@@ -1,0 +1,55 @@
+$colorLetrasOscuro: #424b54; 
+$background: #EBCFB2;
+
+
+header {
+    div {
+        nav {
+            background-image: linear-gradient(to top, $background , white);
+            width: 100%; 
+            
+            div {
+                button {
+                    .navbar-toggler-icon {
+                        width: 2.8125rem;
+                        height: 2.8125rem;
+                        margin: 0.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    width: 17.8rem;
+    height: 10.6rem;
+    margin: 0.5rem;
+}
+
+#menuNav {
+    li {
+        display: inline-block;
+        margin: 0 2rem;
+        position: relative;
+
+        a {
+            color: $colorLetrasOscuro;
+        }
+        #navDropdown {
+            background-color: transparent;
+            li {
+                a {
+                    color: $colorLetrasOscuro;
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

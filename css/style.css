@@ -1,0 +1,998 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #EBCFB2;
+  font-family: "nunito", sans-serif;
+}
+
+main {
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #424b54;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.disenioSubtitulos {
+  color: #25313d;
+  font-size: 5rem;
+  margin: 3rem;
+  text-align: center;
+}
+
+.colorParrafo {
+  color: #424b54;
+  font-size: 2rem;
+}
+
+.flexAndAlignCenter, .sectionNosotros, #lineaFotosNosotros {
+  display: flex;
+  align-items: center;
+}
+
+header div nav {
+  background-image: linear-gradient(to top, #EBCFB2, white);
+  width: 100%;
+}
+
+header div nav div button .navbar-toggler-icon {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  margin: 0.1rem;
+}
+
+.logo {
+  width: 17.8rem;
+  height: 10.6rem;
+  margin: 0.5rem;
+}
+
+#menuNav li {
+  display: inline-block;
+  margin: 0 2rem;
+  position: relative;
+}
+
+#menuNav li a {
+  color: #424b54;
+}
+
+#menuNav li #navDropdown {
+  background-color: transparent;
+}
+
+#menuNav li #navDropdown li a {
+  color: #424b54;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.indexEncabezado {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.indexEncabezado div img {
+  width: 90%;
+  height: 90%;
+}
+
+.indexEncabezado div {
+  text-align: center;
+}
+
+.indexEncabezado div .indexEncabezado__titulo {
+  color: #25313d;
+  font-size: 5.5rem;
+  margin: 2rem;
+  font-weight: bold;
+}
+
+.textoEncabezadoIndex {
+  font-size: 2.3rem;
+}
+
+.indexBotones {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.indexBotones .indexBotones__figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 1rem;
+}
+
+.indexBotones .indexBotones__figure .indexBotones__figure--letra {
+  color: #25313d;
+  font-size: 4rem;
+  margin: 3rem;
+}
+
+#botonModelosGyK {
+  width: 36.581rem;
+  height: 41.963rem;
+}
+
+#botonModelosT {
+  width: 36.559rem;
+  height: 42rem;
+}
+
+.modelosTexto {
+  text-align: center;
+  margin: 0 4rem 4rem 4rem;
+}
+
+.modelosTexto .modelosTexto__p {
+  font-size: 2rem;
+}
+
+.modelosTexto .modelosTexto__p .linkContactoModelos {
+  font-weight: normal;
+  color: #25313d;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.sectionModelos__Galeria {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0rem 4rem;
+}
+
+.sectionModelos__Galeria__div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.sectionModelos__Galeria__div figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 2.5rem;
+  width: auto;
+  padding: 0.5rem;
+}
+
+.sectionModelos__Galeria__div figure .imgCardFigureTienda {
+  margin: 0.7rem;
+  padding: 0.7rem;
+  border-radius: 5%;
+}
+
+.sectionModelos__Galeria__div figure .botonCaracteristicas {
+  font-size: 1.5rem;
+  font-family: "nunito", sans-serif;
+  width: 20rem;
+  height: 4rem;
+}
+
+.cardFigureTienda {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.botonComprarChico {
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logoCarrito {
+  width: 3rem;
+  height: 3rem;
+}
+
+.btn-outline-dark {
+  border-color: #25313d;
+  color: #25313d;
+}
+
+.colorBotonCerrarModal {
+  background-color: #424b54;
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  font-size: 2rem;
+}
+
+.listaSinCosito {
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+  font-size: 1.8rem;
+}
+
+#botonCarrito {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  font-family: "nunito", sans-serif;
+}
+
+.modalContenedor {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modalCarrito {
+  background-color: white;
+  width: auto;
+  padding: 20px;
+  border: 0.7rem solid #25313d;
+}
+
+.modalCarrito p {
+  font-size: 2rem;
+}
+
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+.productoEnCarrito {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.productoEnCarrito p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.productoEnCarrito button {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.boton-eliminar {
+  border: none;
+  background-color: transparent;
+}
+
+.boton-eliminar img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#carritoCerrar {
+  border: none;
+  background-color: transparent;
+  margin-left: 2rem;
+}
+
+#carritoCerrar img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.tituloModalCarrito {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.ganeshaykrishna {
+  width: 25rem;
+  height: 25rem;
+}
+
+.milo {
+  width: 25rem;
+  height: 25rem;
+}
+
+.laraysusdisfraces {
+  width: 25rem;
+  height: 25rem;
+}
+
+.camiloOso {
+  width: 25rem;
+  height: 25rem;
+}
+
+.candy {
+  width: 40.53rem;
+  height: 25rem;
+}
+
+.cotorra {
+  width: 20.09rem;
+  height: 25rem;
+}
+
+.ursulaygatito {
+  width: 25rem;
+  height: 25rem;
+}
+
+.animalitos {
+  width: 39.29rem;
+  height: 25rem;
+}
+
+.kiaraydin {
+  width: 25rem;
+  height: 25rem;
+}
+
+.configuracionHGenerico, .configuracionH-1, .sectionPatrones .sectionPatrones__estiloVideos h4, .configuracionH-2, h3 {
+  color: #25313d;
+  text-align: center;
+}
+
+.configuracionH-1, .sectionPatrones .sectionPatrones__estiloVideos h4 {
+  font-size: 2rem;
+}
+
+.configuracionH-2, h3 {
+  font-size: 4rem;
+}
+
+.divPatrones {
+  text-align: center;
+  margin: 5rem 3rem 7rem 3rem;
+}
+
+.divPatrones .divPatrones__subtitulo {
+  color: #424b54;
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.divPatrones .divPatrones__p {
+  font-size: 2rem;
+  text-align: center;
+  color: #25313d;
+}
+
+.sectionPatrones {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 3rem 10rem 3rem;
+}
+
+.sectionPatrones .sectionPatrones__estiloVideos {
+  display: inline-block;
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.mainFaqs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainFaqs .divImgFaqs {
+  margin: 2rem;
+}
+
+.mainFaqs .divImgFaqs img {
+  border-radius: 5%;
+}
+
+.mainFaqs .divTextoFaqs {
+  margin: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.mainFaqs .divTextoFaqs h2 {
+  font-size: 4rem;
+  color: #222d38;
+  margin: 2rem;
+}
+
+.mainFaqs .divTextoFaqs h3 {
+  font-size: 2.8rem;
+  color: #25313d;
+  margin: 2rem;
+}
+
+.mainNosotros {
+  margin-bottom: 4rem;
+}
+
+.sectionNosotros {
+  flex-flow: row nowrap;
+  margin: 1rem;
+}
+
+.sectionNosotros #familiaNosotros {
+  width: 38.28rem;
+  height: 23.44rem;
+  border-radius: 2rem;
+}
+
+.sectionNosotros .sectionNosotros__p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#lineaFotosNosotros {
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 2rem;
+}
+
+#miloNosotros {
+  width: 30.72rem;
+  height: 17.82rem;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.configuracionImagenesNosotros, #conejoNosotros, #abejitaNosotros, #gokuNosotros {
+  border-radius: 2rem;
+  margin: 1rem;
+  height: 20rem;
+}
+
+#conejoNosotros {
+  width: 27.944rem;
+}
+
+#abejitaNosotros {
+  width: 41.935rem;
+}
+
+#gokuNosotros {
+  width: 27.024rem;
+}
+
+.mainContacto h1 {
+  margin-bottom: 6rem;
+}
+
+.divContacto {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: 0 2rem 5rem 2rem;
+  font-family: "nunito", sans-serif;
+}
+
+.divContacto .divContacto__divInfo {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.divContacto .divContacto__divInfo h3 {
+  margin: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.divContacto .divContacto__divInfo ul {
+  margin-bottom: 2rem;
+}
+
+.divContacto .divContacto__divInfo ul li {
+  color: #424b54;
+  font-family: "nunito", sans-serif;
+  font-size: 1.8rem;
+}
+
+.divContacto .divContacto__divInfo p {
+  color: #424b54;
+  font-size: 1.8rem;
+}
+
+.divContacto .formContacto {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  width: 50rem;
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+
+.form-check {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.botonesContacto {
+  display: inline;
+  margin: 1.2rem;
+}
+
+.botonesContacto .botonesContacto__boton {
+  margin: 0rem 2.5rem;
+  height: 4rem;
+  width: 14rem;
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100%;
+}
+
+#footer {
+  font-size: 2rem;
+  background-image: linear-gradient(to bottom, #EBCFB2, white);
+  border-top: solid 0.2rem #424b54;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3rem;
+}
+
+#footer .ulFooter li {
+  list-style-type: none;
+}
+
+#footer .ulFooter li a {
+  color: #25313d;
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.footer__redesSociales {
+  display: block;
+  text-align: center;
+}
+
+.footer__redesSociales p {
+  margin: 1rem;
+  color: #25313d;
+}
+
+.logosRedesSocialesFooter {
+  width: 4rem;
+  height: 4rem;
+}
+
+@media (max-width: 820px) and (min-width: 768px) {
+  .indexBotones .indexBotones__figure .indexBotones__figure--letra {
+    font-size: 3rem;
+  }
+  #botonModelosGyK {
+    width: 90%;
+    height: 90%;
+  }
+  #botonModelosT {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .indexEncabezado div #imgEncabezadoIndex {
+    width: 70%;
+    height: 70%;
+  }
+  .indexEncabezado div .indexEncabezado__titulo {
+    font-size: 4.5rem;
+  }
+  .indexEncabezado div p {
+    font-size: 1.8rem;
+  }
+  .indexBotones .indexBotones__figure .indexBotones__figure--letra {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 416px) and (min-width: 365px) {
+  #botonModelosGyK {
+    width: 95%;
+    height: 95%;
+  }
+  #botonModelosT {
+    width: 95%;
+    height: 95%;
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  #botonModelosGyK {
+    width: 100%;
+    height: 100%;
+  }
+  #botonModelosT {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .indexEncabezado div #imgEncabezadoIndex {
+    width: 100%;
+    height: 100%;
+  }
+  .indexEncabezado div .indexEncabezado__titulo {
+    font-size: 4rem;
+  }
+  .indexEncabezado div p {
+    font-size: 1.8rem;
+  }
+  #botonModelosGyK {
+    width: 100%;
+    height: 100%;
+  }
+  #botonModelosT {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ganeshaykrishna:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .milo:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .laraysusdisfraces:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .camiloOso:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .candy:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .cotorra:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .ursulaygatito:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .animalitos:hover {
+    transform: scale(1.2, 1.2);
+  }
+  .kiaraydin:hover {
+    transform: scale(1.2, 1.2);
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .sectionModelos__Galeria {
+    margin: 1rem;
+  }
+  .sectionModelos__Galeria__div .divModelosFigure {
+    flex-flow: column nowrap;
+  }
+  .sectionModelos__Galeria__div .divModelosFigure figure img {
+    width: 80%;
+    height: 80%;
+  }
+  .sectionModelos__Galeria__div .divModelosFigure figure button {
+    font-size: 2rem;
+    width: 30rem;
+  }
+  .ganeshaykrishna {
+    width: 35rem;
+    height: 35rem;
+  }
+  .milo {
+    width: 35rem;
+    height: 35rem;
+  }
+  .laraysusdisfraces {
+    width: 35rem;
+    height: 35rem;
+  }
+  .camiloOso {
+    width: 35rem;
+    height: 35rem;
+  }
+  .candy {
+    width: 54.47rem;
+    height: 35rem;
+  }
+  .cotorra {
+    width: 27rem;
+    height: 35rem;
+  }
+  .ursulaygatito {
+    width: 35rem;
+    height: 35rem;
+  }
+  .animalitos {
+    width: 52.8rem;
+    height: 35rem;
+  }
+  .kiaraydin {
+    width: 35rem;
+    height: 35rem;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .sectionModelos__Galeria__div .divModelosFigure figure img {
+    width: 100%;
+    height: 100%;
+  }
+  .sectionModelos__Galeria__div .divModelosFigure figure button {
+    font-size: 1.5rem;
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .sectionModelos__Galeria__div .divModelosFigure figure button {
+    font-size: 1.2rem;
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 382px) {
+  .sectionModelos__Galeria__div .divModelosFigure figure button {
+    font-size: 1rem;
+    width: 13rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .divPatrones .divPatrones__subtitulo {
+    font-size: 2rem;
+  }
+  .divPatrones .divPatrones__p {
+    font-size: 1.8rem;
+  }
+  .sectionPatrones .sectionPatrones__estiloVideos iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 854px) {
+  .mainFaqs {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainFaqs .divImgFaqs {
+    order: 2;
+    text-align: center;
+  }
+  .mainFaqs .divImgFaqs img {
+    width: 80%;
+    height: 80%;
+  }
+  .mainFaqs .divTextoFaqs {
+    order: 1;
+  }
+}
+
+@media only screen and (max-width: 1073px) {
+  #lineaFotosNosotros #conejoNosotros {
+    width: 20.96rem;
+    height: 15rem;
+  }
+  #lineaFotosNosotros #abejitaNosotros {
+    width: 31.45rem;
+    height: 15rem;
+  }
+  #lineaFotosNosotros #gokuNosotros {
+    width: 20.27rem;
+    height: 15rem;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  #lineaFotosNosotros #conejoNosotros {
+    width: 13.97rem;
+    height: 10rem;
+  }
+  #lineaFotosNosotros #abejitaNosotros {
+    width: 20.97rem;
+    height: 10rem;
+  }
+  #lineaFotosNosotros #gokuNosotros {
+    width: 13.51rem;
+    height: 10rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionNosotros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sectionNosotros #familiaNosotros {
+    width: 90%;
+    height: 90%;
+  }
+  #lineaFotosNosotros {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1216px) {
+  .divContacto .divContacto__divInfo h3 {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 1086px) {
+  .divContacto .divContacto__divInfo h3 {
+    font-size: 3rem;
+  }
+  .botonesContacto .botonesContacto__boton {
+    width: 13rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 977px) {
+  .botonesContacto .botonesContacto__boton {
+    width: 12rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 926px) {
+  .botonesContacto .botonesContacto__boton {
+    width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 946px) {
+  .divContacto .divContacto__divInfo h3 {
+    font-size: 2.8rem;
+  }
+}
+
+@media only screen and (max-width: 822px) {
+  .mainContacto h1 {
+    margin-bottom: 2rem;
+  }
+  .divContacto {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainContacto h1 {
+    font-size: 4rem;
+  }
+  .divContacto .divContacto__divInfo h3 {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  .divContacto .formContacto {
+    width: 40rem;
+  }
+  .botonesContacto .botonesContacto__boton {
+    height: 4rem;
+    width: 12rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .divContacto .divContacto__divInfo h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .divContacto .formContacto {
+    width: 35rem;
+  }
+  .botonesContacto .botonesContacto__boton {
+    height: 4rem;
+    width: 11rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 392px) {
+  .divContacto .formContacto {
+    width: 32rem;
+  }
+  .botonesContacto .botonesContacto__boton {
+    align-items: center;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .divContacto .formContacto {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 1195px) {
+  .navbar-nav {
+    align-items: center;
+  }
+  #navDropdown {
+    text-align: center;
+  }
+}
+
+@media (max-width: 990px) {
+  #menuNav li #navDropdown {
+    background-color: transparent;
+    border: solid 1px #424b54;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .disenioSubtitulos {
+    font-size: 3.3rem;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 583px) {
+  #footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  .footer__redesSociales {
+    margin: 2rem 0;
+  }
+  #logoFooter {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #footer {
+    font-size: 1.8rem;
+  }
+}

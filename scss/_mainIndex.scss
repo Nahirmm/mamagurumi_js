@@ -1,0 +1,59 @@
+$background: #EBCFB2;
+$colorLetrasOscuro: #424b54;
+$colorLetrasMasOscuro: #25313d;  
+
+
+.indexEncabezado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    div {
+        img {
+            width: 90%;
+            height: 90%;
+        }
+    }
+    div {
+        text-align: center;
+        .indexEncabezado__titulo {
+            color: $colorLetrasMasOscuro;
+            font-size: 5.5rem;
+            margin: 2rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.textoEncabezadoIndex {
+    font-size: 2.3rem;
+}
+
+.indexBotones {
+    text-align: center;
+    margin-bottom: 2rem;
+    .indexBotones__figure {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 1rem;
+        .indexBotones__figure--letra {
+            color: $colorLetrasMasOscuro;
+            font-size: 4rem;
+            margin: 3rem;
+        }
+    }
+}
+
+#botonModelosGyK {
+    width: 36.581rem;
+    height: 41.963rem;
+}
+
+#botonModelosT {
+    width: 36.559rem;
+    height: 42rem;
+}
+

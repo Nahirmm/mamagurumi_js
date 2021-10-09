@@ -1,0 +1,71 @@
+$colorLetrasOscuro: #424b54; 
+$colorLetrasMasOscuro: #25313d;  
+$fontFamily: 'nunito', sans-serif;
+
+.mainContacto {
+    h1 {
+        margin-bottom: 6rem;
+    }
+}
+
+.divContacto {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 0 2rem 5rem 2rem;
+    font-family: $fontFamily;
+}
+
+.divContacto {
+    .divContacto__divInfo {
+        display: flex;
+        flex-flow: column nowrap;
+
+        h3 {
+            margin: 1.5rem;
+            text-align: left;
+            font-weight: bold;
+        }
+        ul {
+            margin-bottom: 2rem;
+            li {
+                color: $colorLetrasOscuro;
+                font-family: $fontFamily;
+                font-size: 1.8rem;
+            }
+        }
+        p {
+            color: $colorLetrasOscuro;
+
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.divContacto {
+    .formContacto {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        width: 50rem;
+        font-size: 1.5rem;
+        margin: 2rem;
+    }
+}
+
+.form-check {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.botonesContacto {
+    display: inline;
+    margin: 1.2rem;
+
+    .botonesContacto__boton {
+        margin: 0rem 2.5rem;
+        height: 4rem;
+        width: 14rem;
+        font-size: 1.5rem;
+    }
+}

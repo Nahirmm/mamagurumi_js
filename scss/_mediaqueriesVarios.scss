@@ -1,0 +1,53 @@
+$colorLetrasOscuro: #424b54; 
+
+@media (max-width: 1195px) {
+    .navbar-nav {
+        align-items: center;
+    }
+
+    #navDropdown {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 990px) {
+    #menuNav {
+        li {
+            #navDropdown {
+                background-color: transparent; 
+                border: solid 1px $colorLetrasOscuro;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .disenioSubtitulos {
+        font-size: 3.3rem;
+        margin: 1rem;
+    }
+}
+
+@media only screen and (max-width: 583px){
+    #footer {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    .footer__redesSociales {
+        margin: 2rem 0;
+    }
+
+    #logoFooter {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    #footer {
+        font-size: 1.8rem;
+    }
+}
+

@@ -1,0 +1,54 @@
+.mainNosotros {
+    margin-bottom: 4rem;
+}
+
+.sectionNosotros {
+    @extend .flexAndAlignCenter;
+    flex-flow: row nowrap;
+    margin: 1rem;
+
+
+    #familiaNosotros {
+        width: 38.28rem;
+        height: 23.44rem;
+        border-radius: 2rem;
+    }
+
+    .sectionNosotros__p {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+
+#lineaFotosNosotros {
+    @extend .flexAndAlignCenter;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 2rem;
+}
+
+#miloNosotros {
+    width: 30.72rem;
+    height: 17.82rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.configuracionImagenesNosotros {
+    border-radius: 2rem;
+    margin: 1rem;
+    height: 20rem;
+}
+
+$mapImagenes: (
+        conejo: 27.944rem,
+        abejita: 41.935rem,
+        goku: 27.024rem
+);
+
+@each $nombre, $ancho in $mapImagenes {
+    ##{$nombre}Nosotros{
+        width: #{$ancho};
+        @extend .configuracionImagenesNosotros
+    }
+}

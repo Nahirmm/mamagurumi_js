@@ -1,0 +1,200 @@
+$fontFamily: 'nunito', sans-serif;
+$colorLetrasOscuro: #424b54; 
+$colorLetrasMasOscuro: #25313d; 
+$sizeGenericoImagenesModelos: 25rem;
+
+.modelosTexto {
+    text-align: center;
+    margin: 0 4rem 4rem 4rem;
+
+    .modelosTexto__p {
+        font-size: 2rem;
+        .linkContactoModelos {
+            font-weight: normal;
+            color: $colorLetrasMasOscuro;
+            font-size: 2rem;
+            text-decoration: underline;
+        }
+    }
+}
+
+.sectionModelos__Galeria {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0rem 4rem;
+}
+
+.sectionModelos__Galeria__div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 2rem;
+    
+    figure {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 2.5rem;
+        width: auto;
+        padding: 0.5rem;
+
+        .imgCardFigureTienda {
+            margin: 0.7rem;
+            padding: 0.7rem;
+            border-radius: 5%;
+        }
+        .botonCaracteristicas {
+            font-size: 1.5rem;
+            font-family: $fontFamily;
+            width: 20rem;
+            height: 4rem;
+        }
+    }
+}
+
+.cardFigureTienda {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botonComprarChico {
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.logoCarrito {
+    width: 3rem;
+    height: 3rem;
+}
+
+.btn-outline-dark {
+    border-color: $colorLetrasMasOscuro;
+    color: $colorLetrasMasOscuro;
+}
+
+.colorBotonCerrarModal {
+    background-color: $colorLetrasOscuro;
+    font-size: 1.5rem;
+}
+
+.modal-title {
+    font-size: 2rem;
+}
+
+.listaSinCosito {
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: left;
+    font-size: 1.8rem;
+}
+
+#botonCarrito {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    font-family: $fontFamily;
+}
+
+.modalContenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modalCarrito {
+    background-color: white;
+    width: auto;
+    padding: 20px;
+    border: 0.7rem solid $colorLetrasMasOscuro;
+    
+    p {
+        font-size: 2rem;
+    }
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.productoEnCarrito {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2rem;
+
+    p {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    button {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+.boton-eliminar {
+    border: none;
+    background-color: transparent;
+    img {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+#carritoCerrar  {
+    border: none;
+    background-color: transparent;
+    margin-left: 2rem;
+    img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.tituloModalCarrito {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+$mapImagenes: (
+        ganeshaykrishna: $sizeGenericoImagenesModelos,
+        milo: $sizeGenericoImagenesModelos,
+        laraysusdisfraces: $sizeGenericoImagenesModelos,
+        camiloOso: $sizeGenericoImagenesModelos,
+        candy: 40.53rem,
+        cotorra: 20.09rem,
+        ursulaygatito: $sizeGenericoImagenesModelos,
+        animalitos: 39.29rem,
+        kiaraydin: $sizeGenericoImagenesModelos,
+);
+
+@each $nombre, $ancho in $mapImagenes {
+    .#{$nombre} {
+        width: #{$ancho};
+        height: $sizeGenericoImagenesModelos;
+    }
+}
+
+
+
+

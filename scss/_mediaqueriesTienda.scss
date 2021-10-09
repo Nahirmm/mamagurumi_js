@@ -1,0 +1,115 @@
+$allPercentage: 100%;
+$sizeGenericoImagenesModelosTablet: 35rem;
+
+@media screen and (min-width: 1200px) {
+    $mapImagenes: (
+        ganeshaykrishna: $sizeGenericoImagenesModelos,
+        milo: $sizeGenericoImagenesModelos,
+        laraysusdisfraces: $sizeGenericoImagenesModelos,
+        camiloOso: $sizeGenericoImagenesModelos,
+        candy: 40.53rem,
+        cotorra: 20.09rem,
+        ursulaygatito: $sizeGenericoImagenesModelos,
+        animalitos: 39.29rem,
+        kiaraydin: $sizeGenericoImagenesModelos,
+);
+
+@each $nombre, $ancho in $mapImagenes {
+    .#{$nombre}:hover {
+        transform: scale(1.2,1.2);
+    }
+}
+}
+
+@media only screen and (max-width: 760px){
+
+    .sectionModelos__Galeria {
+        margin: 1rem;
+    }
+
+    .sectionModelos__Galeria__div {
+        .divModelosFigure {
+            flex-flow: column nowrap;
+        }
+    }
+
+    .sectionModelos__Galeria__div {
+        .divModelosFigure {
+            figure {
+                img {
+                    width: 80%;
+                    height: 80%;
+                }
+                button {
+                    font-size: 2rem;
+                    width: 30rem;
+                }
+            }
+        }
+    } 
+
+    $mapImagenes: (
+        ganeshaykrishna: $sizeGenericoImagenesModelosTablet,
+        milo: $sizeGenericoImagenesModelosTablet,
+        laraysusdisfraces: $sizeGenericoImagenesModelosTablet,
+        camiloOso: $sizeGenericoImagenesModelosTablet,
+        candy: 54.47rem,
+        cotorra: 27rem,
+        ursulaygatito: $sizeGenericoImagenesModelosTablet,
+        animalitos: 52.8rem,
+        kiaraydin: $sizeGenericoImagenesModelosTablet,
+    );
+
+    @each $nombre, $ancho in $mapImagenes {
+        .#{$nombre} {
+            width: #{$ancho};
+            height: $sizeGenericoImagenesModelosTablet;
+        }
+    }
+}
+
+@media only screen and (max-width: 530px){
+
+    .sectionModelos__Galeria__div {
+        .divModelosFigure {
+            figure {
+                img {
+                    width: $allPercentage;
+                    height: $allPercentage;
+                }
+                button {
+                    font-size: 1.5rem;
+                    width: 20rem;
+                }
+            }
+        }
+    } 
+}
+
+@media only screen and (max-width: 430px){
+
+    .sectionModelos__Galeria__div {
+        .divModelosFigure {
+            figure {
+                button {
+                    font-size: 1.2rem;
+                    width: 15rem;
+                }
+            }
+        }
+    } 
+}
+
+@media only screen and (max-width: 382px){
+
+    .sectionModelos__Galeria__div {
+        .divModelosFigure {
+            figure {
+                button {
+                    font-size: 1rem;
+                    width: 13rem;
+                }
+            }
+        }
+    } 
+}

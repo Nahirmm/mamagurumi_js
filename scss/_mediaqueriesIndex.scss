@@ -1,0 +1,104 @@
+@media (max-width: 820px) and (min-width: 768px) {
+    .indexBotones {
+        .indexBotones__figure {
+            .indexBotones__figure--letra {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    #botonModelosGyK {
+        width: 90%;
+        height: 90%;
+    }
+    
+    #botonModelosT {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .indexEncabezado {
+        div {
+            #imgEncabezadoIndex {
+                width: 70%;
+                height: 70%;
+            }
+        }
+        div {
+            .indexEncabezado__titulo {
+                font-size: 4.5rem;
+            }
+            p {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .indexBotones {
+        .indexBotones__figure {
+            .indexBotones__figure--letra {
+                font-size: 3rem;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 416px) and (min-width: 365px) {
+    #botonModelosGyK {
+        width: 95%;
+        height: 95%;
+    }
+    
+    #botonModelosT {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    #botonModelosGyK {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #botonModelosT {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 320px){
+
+    .indexEncabezado {
+        div {
+            #imgEncabezadoIndex {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        div {
+            .indexEncabezado__titulo {
+                font-size: 4rem;
+            }
+            p {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    #botonModelosGyK {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #botonModelosT {
+        width: 100%;
+        height: 100%;
+    }
+
+}
