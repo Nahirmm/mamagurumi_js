@@ -1,18 +1,31 @@
   
-  const aJSON = (objeto) => {
-    return JSON.parse(objeto)
-  }
   const carritoDeComprasNombre = 'carritoDeCompras';
-  localStorage.setItem(carritoDeComprasNombre, JSON.stringify({carro: []}));
-  
-  
+
+  const getCarro = () => {
+    let carroEnObjeto = JSON.parse(localStorage.getItem(carritoDeComprasNombre))
+    return carroEnObjeto.carro
+  }
+
+  const setCarro = (productosEnCarrito) => {
+    let carroEnString = JSON.stringify({carro: productosEnCarrito});
+    return localStorage.setItem(carritoDeComprasNombre, carroEnString);
+  }
+
+  const iniciarCarro = () => {
+    let carro = JSON.parse(localStorage.getItem(carritoDeComprasNombre))
+    if(!carro) {
+      setCarro([]);
+    }
+  }
+
+  iniciarCarro();
+
   const contenedorCarrito = document.getElementById('carritoContenedor');
 
   function agregarAlCarrito(id) {
-    let carroLista =  aJSON(localStorage.getItem(carritoDeComprasNombre)).carro;
-    console.log( carroLista)
+    let carroLista = getCarro();
 
-    let productoRepetido =carroLista.find(prodR => prodR.id == id);
+    let productoRepetido = carroLista.find(prodR => prodR.id == id);
     if(productoRepetido){
 
       productoRepetido.cantidad = productoRepetido.cantidad + 1;
@@ -22,7 +35,7 @@
 
     let agregarProducto = tienda.find(producto => producto.id == id);
     carroLista.push(agregarProducto);
-    localStorage.setItem(carritoDeComprasNombre, JSON.stringify({carro: carroLista}));
+    setCarro(carroLista);
 
     agregarProducto.cantidad = 1;
     actualizarCarrito();
@@ -39,8 +52,8 @@
 
         botonEliminar.onclick = () => {
           botonEliminar.parentElement.remove()
-            carritoDeCompras = aJSON(localStorage.getItem(carritoDeComprasNombre)).carro.filter(prodE => prodE.id != agregarProducto.id)
-            localStorage.setItem(carritoDeComprasNombre, JSON.stringify(carritoDeCompras));
+            carritoDeCompras = getCarro().filter(prodE => prodE.id != agregarProducto.id)
+            setCarro(carritoDeCompras);
             actualizarCarrito()
         }
     }
@@ -51,7 +64,7 @@
 
   function actualizarCarrito() {
     
-    let carritoPorActualizar = aJSON(localStorage.getItem(carritoDeComprasNombre)).carro
+    let carritoPorActualizar = getCarro();
     contadorCarrito.innerText = carritoPorActualizar.reduce((acc, el)=> acc + el.cantidad,0);
     precioTotal.innerText = carritoPorActualizar.reduce((acc,el)=> acc + (el.precio * el.cantidad),0)
     

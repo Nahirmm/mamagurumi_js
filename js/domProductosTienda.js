@@ -1,19 +1,19 @@
 const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__div");
  
   crearProducto(tienda);
+  crearBotonComprar(tienda);
 
-  function crearProducto(array) {
+  function crearProducto(tienda) {
 
     for (const producto of tienda) {
       let contenedor = document.createElement("figure");
   
       contenedor.innerHTML += `<div class="flex_card cardFigureTienda">
                 <img src=${producto.imagen} alt="${producto.nombre}" class="${producto.class} imgCardFigureTienda">
-                <div>
+                <div id="botonesBajoFigure_${producto.id}">
                     <button type="button" class="btn btn-primary btn-light btn-outline-dark botonCaracteristicas" data-bs-toggle="modal" data-bs-target="#${producto.modal}">
                          ${producto.nombre}
                     </button>
-                    <button id="botonComprar${producto.id}" class="btn btn-primary btn-light btn-outline-dark botonComprarChico"><img src="../assets/carrito-de-compras.svg" alt="" class="logoCarrito"></button>
                 </div>
                 <div class="modal fade" id="${producto.modal}" tabindex="-1" aria-labelledby="${producto.modalLabel}" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -46,5 +46,21 @@ const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__d
           agregarAlCarrito(producto.id);
         }
     }
-    
   };
+
+  function crearBotonComprar(tienda) {
+
+    tienda.forEach(producto => {
+        $("#botonesBajoFigure_" + producto.id).append(`<button id="botonComprar_${producto.id}" class="btn btn-primary btn-light btn-outline-dark botonComprarChico">
+                        <img src="../assets/carrito-de-compras.svg" alt="" class="logoCarrito">
+                      </button>`);
+
+        
+
+        $("#botonComprar_" + producto.id).click(function () {
+            agregarAlCarrito(producto.id);
+        })
+    });
+  }
+
+  
