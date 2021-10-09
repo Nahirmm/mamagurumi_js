@@ -18,7 +18,7 @@
     }
   }
 
-  iniciarCarro();
+  setCarro([]);
 
   const contenedorCarrito = document.getElementById('carritoContenedor');
 
@@ -30,6 +30,7 @@
 
       productoRepetido.cantidad = productoRepetido.cantidad + 1;
       document.getElementById(`cantidad${productoRepetido.id}`).innerHTML = `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`;
+      
       actualizarCarrito()
     }else{
 
@@ -39,6 +40,7 @@
 
     agregarProducto.cantidad = 1;
     actualizarCarrito();
+
     let div = document.createElement("div");
     div.classList.add('productoEnCarrito');
     div.innerHTML = `<p>${agregarProducto.nombre}</p>
