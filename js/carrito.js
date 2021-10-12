@@ -5,8 +5,7 @@
   const precioTotal = document.getElementById('precioTotal');
 
   class Item {
-    constructor(carroLista, producto) {
-      this.index = carroLista.length;
+    constructor(producto) {
       this.cantidad = 1;
       this.producto = producto;
     }
@@ -32,15 +31,21 @@
     if(!carroCreadoEnLocalStorage) {
       setCarro([]);
     } else {
-      actualizarCarrito(carroCreadoEnLocalStorage.carro)
+      let carro = carroCreadoEnLocalStorage.carro;
+      carro.forEach(item => {
+        crearComponente(item.producto, item.cantidad)
+      });
+      actualizarCarrito(carro)
     }
   }
 
   // --- CARRITO ---
 
   function actualizarCarrito(carroLista) {
+    let precioCalculado = 0
+    carroLista.forEach(item => precioCalculado += item.cantidad * item.producto.precio)
     contadorCarrito.innerText = carroLista.length;
-    precioTotal.innerText = carroLista.reduce((acc,el)=> acc + (el.producto.precio * el.cantidad),0)
+    precioTotal.innerText = precioCalculado
   }
 
   function agregarAlCarrito(id) {
@@ -48,47 +53,67 @@
 
     let itemDeProductoRepetido = carroLista.find(item => item.producto.id == id);
     if(itemDeProductoRepetido){
-      agregarItemRepetido(carroLista, itemDeProductoRepetido)
+      carroLista = agregarItemRepetido(carroLista, id)
     }else{
-      agregarNuevoItem(carroLista, id)
+      carroLista = agregarNuevoItem(carroLista, id)
     }
+
+    setCarro(carroLista)
   };
 
-  const agregarItemRepetido = (carroLista, itemRepetido) => {
-    
-    let nuevaCantidad = carroLista[itemRepetido.index].cantidad + 1
-    carroLista[itemRepetido.index].cantidad = nuevaCantidad
-    setCarro(carroLista)
-    let idProducto = itemRepetido.producto.id
-    document.getElementById(`cantidad${idProducto}`).innerHTML = `<p id="cantidad${idProducto}">Cantidad: ${nuevaCantidad}</p>`;
+  const agregarItemRepetido = (carroLista, id) => {
+    let indexDelItem = carroLista.map(i => i.producto.id).indexOf(id)
+    let nuevaCantidad = carroLista[indexDelItem].cantidad + 1
+    carroLista[indexDelItem].cantidad = nuevaCantidad
+    document.getElementById(`cantidad${id}`).innerText = `Cantidad: ${nuevaCantidad}`;
+    return carroLista
   }
 
   const agregarNuevoItem = (carroLista, id) => {
-    let agregarProducto = tienda.find(producto => producto.id == id);
-    let nuevoItem = new Item(carroLista, agregarProducto)
+    let nuevoProducto = tienda.find(producto => producto.id == id);
+    let nuevoItem = new Item(nuevoProducto)
     carroLista.push(nuevoItem);
+    crearComponente(nuevoProducto, 1)
+    return carroLista
+  }
+
+  const crearComponente = (agregarProducto, cantidad) => {
 
     let div = document.createElement("div");
+    div.id = "div-" + agregarProducto.id
     div.classList.add('productoEnCarrito');
     div.innerHTML = `<p>${agregarProducto.nombre}</p>
                     <p>Precio: $${agregarProducto.precio}</p>
-                    <p id="cantidad${agregarProducto.id}">Cantidad: ${agregarProducto.cantidad}</p>
+                    <p id="cantidad${agregarProducto.id}">Cantidad: ${cantidad || agregarProducto.cantidad}</p>
                     <button id="eliminar${agregarProducto.id}" class="boton-eliminar"><img src="../assets/papelera-de-reciclaje.svg" alt="" class="logosRedesSocialesFooter"></button>`
 
     contenedorCarrito.appendChild(div);
     
-    setCarro(carroLista);
+    crearBotonEliminar(agregarProducto.id)
   }
 
-  const onClickBotonEliminar = () => {
-    let carroLista = getCarro()
-    let botonEliminar = document.getElementById(`eliminar${agregarProducto.id}`)
+  const crearBotonEliminar = (id) => {
 
-        botonEliminar.onclick = () => {
-          botonEliminar.parentElement.remove()
-            carritoDeCompras = carroLista.filter(itemE => itemE.producto.id != agregarProducto.id)
-            setCarro(carroLista);
-        }
+    let botonEliminar = document.getElementById(`eliminar${id}`)
+
+    botonEliminar.onclick = () => {
+      eliminarItemPorId(id, botonEliminar)
+    }
+  }
+
+  const eliminarItemPorId = (id, botonEliminar) => {
+    let carroLista = getCarro()
+    let indexOfItem = carroLista.map(i => i.producto.id).indexOf(id)
+    let nuevaCantidad = carroLista[indexOfItem].cantidad - 1 
+    if (nuevaCantidad === 0) {
+    carroLista.splice(indexOfItem, 1)
+    botonEliminar.parentElement.remove()
+    } else {
+      let componenteCantidad = document.getElementById(`cantidad${id}`)
+      componenteCantidad.innerText = `Cantidad: ${nuevaCantidad}`
+      carroLista[indexOfItem].cantidad = nuevaCantidad
+    }
+    setCarro(carroLista);
   }
 
     // ejecución 
