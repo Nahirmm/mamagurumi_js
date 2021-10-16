@@ -55,12 +55,10 @@ const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__d
                         <img src="../assets/carrito-de-compras.svg" alt="" class="logoCarrito">
                       </button>`);
 
-        
-
         $("#botonComprar_" + producto.id).click(function () {
             agregarAlCarrito(producto.id);
+            abrirSnackBar(producto.nombre);
         })
     });
   }
 
-  
