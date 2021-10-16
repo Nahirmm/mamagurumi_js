@@ -1,10 +1,12 @@
 const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__div");
- 
-  crearProducto(tienda);
-  crearBotonComprar(tienda);
+
+  function construirTienda() {
+        crearProducto(tienda);
+        crearBotonComprar(tienda);
+  }
 
   function crearProducto(tienda) {
-
+    if (tienda) {
     for (const producto of tienda) {
       let contenedor = document.createElement("figure");
   
@@ -46,10 +48,10 @@ const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__d
           agregarAlCarrito(producto.id);
         }
     }
-  };
+  }};
 
   function crearBotonComprar(tienda) {
-
+if (tienda){
     tienda.forEach(producto => {
         $("#botonesBajoFigure_" + producto.id).append(`<button id="botonComprar_${producto.id}" class="btn btn-primary btn-light btn-outline-dark botonComprarChico">
                         <img src="../assets/carrito-de-compras.svg" alt="" class="logoCarrito">
@@ -60,5 +62,6 @@ const contenedorGaleriaDiv = document.getElementById("sectionModelos__Galeria__d
             abrirSnackBar(producto.nombre);
         })
     });
+}
   }
 
