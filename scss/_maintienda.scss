@@ -135,11 +135,14 @@ $sizeGenericoImagenesModelos: 25rem;
     z-index: 5;
 }
 
+#carritoContenedor {
+    margin: 2rem;
+}
+
 .productoEnCarrito {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: (1fr 1fr 1fr 0.1fr);
+    grid-gap: 1rem;
 
     p {
         margin-left: 2rem;
@@ -174,6 +177,20 @@ $sizeGenericoImagenesModelos: 25rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+}
+
+#divFinalModal {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;   
+}
+
+#botonCompraFinalizada {
+    color: white;
+    width: 20rem;
+    height: 4rem;
+    font-size: 2rem;
 }
 
 $mapImagenes: (
