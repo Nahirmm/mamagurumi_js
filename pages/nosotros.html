@@ -90,7 +90,10 @@
             </div>
             <div id="carritoContenedor">
             </div>
-            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+            <div id="divFinalModal">
+                <p class="precioProducto"><u>Precio total</u>: $<span id="precioTotal"></span></p>
+                <button id="botonCompraFinalizada" class="btn btn-dark">Finalizar compra</button>
+            </div>
         </div>
     </div>
     <footer class="footerFixed"> 
@@ -125,6 +128,8 @@
         </div>
     </footer> 
     <script src="../js/bootstrap.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
     <script src="../js/tienda.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/modalFinalCompra.js"></script>

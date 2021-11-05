@@ -116,8 +116,64 @@
     setCarro(carroLista);
   }
 
+
+  // Boton finalizar compra
+
+const URLPOST = "../data/compra.json"
+
+//function guardarCompra 
+
+const guardarCompra = () => {
+let data = {comprado : getCarro()}
+
+// no pude editar el archivo json, según lo que investigué no se puede 
+// y tampoco tengo una api para completar el ejercicio 
+/*
+$.ajax({
+  type: "POST",
+  url: URLJSONPOST,
+  data: JSON.stringify(data),
+  contentType: "application/json; charset=utf-8",
+  dataType: "json",
+  success: function(data){alert(data);},
+  error: function(errMsg) {
+      //alert(errMsg);
+  }
+}); 
+*/
+setCarro([])
+contenedorCarrito.innerText = ""
+}
+
+
+
+const configFinalizaCompraBoton = () => {
+  let finalizarCompra = document.getElementById('botonCompraFinalizada');
+
+  if (finalizarCompra) {
+  finalizarCompra.onclick = () => {
+    cartel(getCarro().length == 0)
+    guardarCompra()
+  }
+}else {
+  
+}
+}
+
+const cartel = (estaVacio) => {
+  if (estaVacio){
+    //Swal.fire("Agregue un producto al carrito", "error");
+    Swal.fire("No tiene ningún producto agregado al carrito", "", "error");
+  } else {
+    Swal.fire("Muchas gracias por su compra!", "En breve nos estaremos comunicando con usted", "success");
+  }
+
+}
+
+
     // ejecución 
 
     iniciarCarro();
+    configFinalizaCompraBoton()
 
   
